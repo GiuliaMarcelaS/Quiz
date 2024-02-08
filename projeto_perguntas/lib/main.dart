@@ -24,12 +24,18 @@ class _PerguntaAppState extends State<PerguntaApp> {
 
   @override
   Widget build(BuildContext context){
-    List perguntas = [
-      'Qual é o seu estilo de música favorito?',
-      'Qual é o seu gênero de filme favorito?',
-      'Qual é a sua cor favorita?',
-      'Qual dessas é sua cidade favorita?',
-      'Qual desses é seu cantor favorito?'
+    final List perguntas = [
+      {'texto':'Qual é o seu estilo de música favorito?',
+      'respostas':['rock', 'pop', 'eletrônica','rap']},
+      {'texto':'Qual é o seu gênero de filme favorito?',
+      'respostas':['terror','comédia', 'ficção', 'animação']},
+      {'texto':'Qual é a sua cor favorita?',
+      'respostas':['amarelo', 'vermelho', 'verde', 'preto']},
+      {'texto':'Qual dessas é sua cidade favorita?',
+      'respostas':['Tokyo', 'Los Angeles', 'Rio de Janeiro', 'Londres']},
+      {'texto':'Qual é o seu animal favorito?',
+      'respostas':['Cachorro', 'Gato', 'Cavalo', 'Hamster']}
+      
     ];
     return MaterialApp( 
       home: Scaffold(
@@ -38,7 +44,7 @@ class _PerguntaAppState extends State<PerguntaApp> {
         ),
         body: Column(
           children:  [
-            Questao(perguntas[_perguntaSelecionada]),
+            Questao(perguntas[_perguntaSelecionada]['texto']),
              Resposta('Resposta 1', _responder),
              Resposta('Resposta 2', _responder),
              Resposta('Resposta 3', _responder),
